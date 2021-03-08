@@ -17,7 +17,7 @@
         <ul class="list-group" *ngIf="boughtItems.length > 0">
           <li class="list-group-item" *ngFor="let item of boughtItems">{{item.title}} {{item.price}} <a (click)="removeFromCart(item)"><img class="trash" src="/assets/trash.png" width="16" heught="16"></a></li>
         </ul>
-        <p>Total {{priceTotal}}</p>
+        <p>Total: {{priceTotal}}</p>
     </div>
   </div>
   </main><!-- /.container -->
