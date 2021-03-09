@@ -18,6 +18,8 @@
           <li class="list-group-item" *ngFor="let item of boughtItems">{{item.title}} {{item.price | currency :'&euro;'}} <a (click)="removeFromCart(item)"><img class="trash" src="/assets/trash.png" width="16" heught="16"></a></li>
         </ul>
         <p>Total: {{priceTotal | currency :'&euro;'}}</p>
+        <app-confirm></app-confirm>
+        
     </div>
   </div>
   </main><!-- /.container -->
