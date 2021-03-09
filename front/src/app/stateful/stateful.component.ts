@@ -17,6 +17,7 @@ export class StatefulComponent implements OnInit {
   items : Array<Product>;
   boughtItems: Array<Product>;
   priceTotal: number =  0;
+  showShopConfirmed :boolean = false;
 
   
 
@@ -63,6 +64,12 @@ export class StatefulComponent implements OnInit {
     }else{
       this.confirmChild.isDisabled = true;
     }
+  }
+
+
+  shopConfirmed(confirmed:boolean){
+    console.log("shop confirmed", confirmed);
+    this.showShopConfirmed = true;
   }
 
 }

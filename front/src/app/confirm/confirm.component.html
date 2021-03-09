@@ -12,11 +12,11 @@
         <div class="modal-body">
           <p>Seguro que deseas confirmar tu compra??</p>
 
-          <p>Precio total: {{price}} </p>
+          <p>Precio total: {{ price| currency :'&euro;'}} </p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="showModal=false">Close</button>
-          <button type="button" class="btn btn-primary" (click)="checkout()">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="showModal=false">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="checkout()">Confirmar</button>
         </div>
       </div>
     </div>

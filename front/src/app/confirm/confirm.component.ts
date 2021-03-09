@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-confirm',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./confirm.component.css']
 })
 export class ConfirmComponent implements OnInit {
+
+  @Output() shopconfirmed: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { 
     this.isDisabled = true;
@@ -16,7 +18,10 @@ export class ConfirmComponent implements OnInit {
   price: number;
 
   checkout(): void{
-    console.log("yeppp");
+
+    this.showModal = false;
+    this.shopconfirmed.emit( true );
+
   }
 
   ngOnInit(): void {
