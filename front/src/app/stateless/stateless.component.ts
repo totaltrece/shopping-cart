@@ -1,5 +1,5 @@
 import { Component, OnInit , Input, EventEmitter, Output } from '@angular/core';
-import { Product }  from  "../interfaces/product";   ///interface product
+import { ProductData, ProductView }  from  "../interfaces/product";   ///interface product
 
 @Component({
   selector: 'app-stateless',
@@ -7,8 +7,8 @@ import { Product }  from  "../interfaces/product";   ///interface product
   styleUrls: ['./stateless.component.css']
 })
 export class StatelessComponent implements OnInit {
-  @Output() productselected: EventEmitter<Product> = new EventEmitter();
-  @Input() product: Product;
+  @Output() productselected: EventEmitter<ProductView> = new EventEmitter();
+  @Input() product: ProductView;
   
   public buttonText: string;
   // private disable: boolean;
@@ -27,6 +27,10 @@ export class StatelessComponent implements OnInit {
 
   isdisabled() {
     return this.product.selected;
+  }
+
+  rightClick(){
+    console.log("right click");
   }
 
 }
