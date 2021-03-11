@@ -23,14 +23,14 @@
           <li class="list-group-item" *ngFor="let item of boughtItems">{{item.title}} {{item.price | currency :'&euro;'}} <a (click)="removeFromCart(item)"><img class="trash" src="/assets/trash.png" width="16" heught="16"></a></li>
         </ul>
         <p>Total: {{priceTotal | currency :'&euro;'}}</p>
-        <app-status-cart></app-status-cart>
+        <!-- <app-status-cart></app-status-cart> -->
         <app-confirm (shopconfirmed)="shopConfirmed($event)"></app-confirm>
 
         
         
     </div>
   </div>
-
+  <app-firstform></app-firstform>
   <p>sin pipe: hola </p>
   <p>con pipe reversed: {{ 'hola' | reversed }} </p>
   <p><input type="text" (keydown)="onKeyboard($event)"></p>

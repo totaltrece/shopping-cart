@@ -30,7 +30,7 @@ export class StatelessComponent implements OnInit {
   }
 
   rightClick(){
-    console.log("right click");
+    console.log("right");
   }
 
 }

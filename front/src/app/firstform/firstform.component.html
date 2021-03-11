@@ -1,0 +1,40 @@
+<section id="forms">
+  <header>
+    <h1>Form elements hey</h1>
+  </header>
+  <form #firstform="ngForm" (ngSubmit)="onSubmit(firstform)" novalidate>
+    <fieldset id="forms__input">
+      <legend>Input fields</legend>
+      <p> <label for="user">Usuario</label>
+        <input name="user" id="user" type="text" placeholder="Su nombre de usuario" required ngModel #user="ngModel">
+      </p>
+      <button class="btn btn-primary" [disabled]="!firstform.valid">enviar</button>
+    </fieldset>
+    <p *ngIf="firstform.controls.user">{{ firstform.controls.user.errors | json }}</p>
+  </form>
+
+</section>
+
+
+<section id="forms">
+  <header>
+    <h1>Form elements reactive</h1>
+  </header>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)" novalidate>
+    <fieldset id="forms__input">
+      <legend>Input fields</legend>
+      <p> <label for="user">Usuario</label> <input formControlName="user">
+        <span  *ngIf="form.get('user').hasError('required')">Este campo es requerido</span>
+        </p>
+      <p> <label for="password">Password</label> <input formControlName="password"> </p>
+      
+      
+      <p> <label for="url">Urlyep</label> <input formControlName="url"> </p>
+
+      <p><button class="button primary" type="submit" [disabled]="!form.valid">Submit</button></p>
+    </fieldset>
+    <p *ngIf="form.controls.user">{{ form.controls.user.errors | json }}</p>
+    <p *ngIf="form.controls.url">{{ form.controls.url.errors   | json }}</p>
+  </form>
+
+</section>
