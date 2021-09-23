@@ -10,6 +10,8 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { ReversedPipe } from './pipes/reversed.pipe';
 import { StatusCartComponent } from './status-cart/status-cart.component';
 import { FirstformComponent } from './firstform/firstform.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { FirstformComponent } from './firstform/firstform.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
