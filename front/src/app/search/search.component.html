@@ -1,0 +1,20 @@
+<h2>Buscador de temas de reddit</h2>
+
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control"  [(ngModel)]="searchString" (ngModelChange)="inputChanged($event)"  placeholder="buscar" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="searchString=''" >Limpiar</button>
+  </div>
+
+  <div *ngFor="let result of results$ | async">
+      <h5><a target="blank" [href]="result.data.url">{{result.data.title}}</a></h5>
+      
+    <div *ngIf="result.data.thumbnail != 'default' && result.data.thumbnail != 'self'">
+        <img src="{{result.data.thumbnail}}">
+    </div>
+  </div>
+
+  <div *ngIf="results$.length === 0 | async">
+    <p>No se han encontrado resultados</p>
+</div>
+

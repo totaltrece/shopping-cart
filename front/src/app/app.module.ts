@@ -12,6 +12,7 @@ import { StatusCartComponent } from './status-cart/status-cart.component';
 import { FirstformComponent } from './firstform/firstform.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { environment } from '../environments/environment';
     ConfirmComponent,
     ReversedPipe,
     StatusCartComponent,
-    FirstformComponent
+    FirstformComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
