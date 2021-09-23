@@ -9,19 +9,15 @@
 
   <div *ngIf="results$ | async as results">
     <p *ngIf="results.length === 0 && searchString != ''">No se han encontrado resultados</p>
- <div>
+  </div>
 
   <div *ngFor="let result of results$ | async">
-      <h5><a target="blank" [href]="result.data.url">{{result.data.title}}</a></h5>
+    <h5><a target="blank" [href]="result.data.url">{{result.data.title}}</a></h5>
       
     <div *ngIf="result.data.thumbnail != 'default' && result.data.thumbnail != 'self'">
         <img src="{{result.data.thumbnail}}">
     </div>
   </div>
-
-  <div *ngIf="results$ === null">
-    <p>No se han encontrado resultados</p>
-</div>
 
 
 
